@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Space_Grotesk, Inter } from 'next/font/google';
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
+import NavBar from "./components/NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "thirdweb SDK + Next starter",
+  title: "BlockFund",
   description:
     "Starter template for using thirdweb SDK with Next.js App router",
 };
@@ -18,8 +20,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+      <body className={`bg-slate-100 text-slate-700 dark:bg-gray-900 dark:text-gray-100 ${inter.className}`}>
+        <ThirdwebProvider>
+          <NavBar />
+          {children}
+        </ThirdwebProvider>
       </body>
     </html>
   );

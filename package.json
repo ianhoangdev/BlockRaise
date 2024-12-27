@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.1.0",
+    "@aws-sdk/client-s3": "^3.717.0",
+    "aws-sdk": "^2.1692.0",
+    "dotenv": "^16.4.7",
+    "formidable": "^3.5.2",
+    "next": "^14.2.21",
     "react": "^18.3",
     "react-dom": "^18.3",
     "thirdweb": "^5"
