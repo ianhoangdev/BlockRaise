@@ -90,14 +90,27 @@ export const MyCampaignCard: React.FC<MyCampaignCardProps> = ({ contractAddress 
                 </div>
             )}
 
-            <div>
+            {/* <div>
                 <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-slate-100">
                     {name || "Loading..."}
                 </h5>
                 <p className="mb-3 text-gray-700 dark:text-slate-300 text-sm font-light">
                     {description || "Loading description..."}
                 </p>
-            </div>
+            </div> */}
+
+                <h5 className="mb-2 text-2xl font-semibold text-gray-900 dark:text-slate-100">
+                    {name || "Loading..."}
+                </h5>
+
+                {/* Campaign Description */}
+                <p className="mb-3 font-normal text-gray-700 dark:text-slate-300">
+                    {description
+                        ? description.length > 100
+                            ? `${description.slice(0, 100)}...`
+                            : description
+                        : "No description available"}
+                </p>
 
             {/* View Campaign Button */}
             <Link href={`/campaign/${contractAddress}`} passHref={true}>

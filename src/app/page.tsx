@@ -4,7 +4,6 @@ import { client } from "./client";
 import { sepolia } from "thirdweb/chains";
 import { getContract } from "thirdweb";
 import { CampaignCard } from "./components/CampaignCard";
-import { CROWDFUNDING_FACTORY } from "./constants/contracts";
 import { Space_Grotesk, Inter } from 'next/font/google';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
@@ -12,19 +11,31 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   // Get CrowdfundingFactory contract
+
+  const CROWDFUNDING_FACTORY = process.env.NEXT_PUBLIC_CROWDFUNDING_FACTORY;
+
+  if (!CROWDFUNDING_FACTORY) {
+      throw new Error("CROWDFUNDING_FACTORY environment variable is not set");
+  }
+  
   const contract = getContract({
     client: client,
     chain: sepolia,
     address: CROWDFUNDING_FACTORY,
   });
 
+  console.log('contract:', contract);
+  console.log('factory:', CROWDFUNDING_FACTORY);
 
   // Get all campaigns deployed with CrowdfundingFactory
-  const {data: campaigns, isLoading: isLoadingCampaigns, refetch: refetchCampaigns } = useReadContract({
-    contract: contract,
-    method: "function getAllCampaigns() view returns ((address campaignAddress, address owner, string name)[])",
-    params: []
+  const { data: campaigns, isPending: isLoadingCampaigns } = useReadContract({
+    contract,
+    method:
+      "function getAllCampaigns() view returns ((address campaignAddress, address owner, string name, uint256 creationTime)[])",
+    params: [],
   });
+
+  console.log('campaigns', campaigns);
 
   return (
     <main className="mx-auto max-w-7xl px-4 mt-4 sm:px-6 lg:px-8">

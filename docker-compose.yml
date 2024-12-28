@@ -1,15 +1,10 @@
-version: "3.8"
 services:
   app:
     build: .
     ports:
       - "3000:3000"
-    environment:
-      - NEXT_PUBLIC_TEMPLATE_CLIENT_ID=52c89fb9c07d21e7740330f1a240a38b
-      - NEXT_PUBLIC_AWS_ACCESS_KEY_ID=AKIA2MNVMBN3SEPYKRUV
-      - NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY=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
-      - NEXT_PUBLIC_AWS_REGION=us-east-2
-      - NEXT_PUBLIC_CROWDFUNDING_FACTORY=0x2dDF5E30822b1a4830aB102A288527b48f8407D4
+    env_file:
+      - .env
     volumes:
       - .:/app
       - /app/node_modules
