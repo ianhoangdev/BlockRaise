@@ -5,7 +5,7 @@ import { client } from "@/app/client";
 import Link from "next/link";
 import { ConnectButton, darkTheme, lightTheme, useActiveAccount } from "thirdweb/react";
 import Image from "next/image";
-import logo from "../constants/logo.webp"
+import logo from "@/app/constants/logo.png";
 
 const Navbar = () => {
   const account = useActiveAccount();
@@ -46,7 +46,7 @@ const Navbar = () => {
             />
             <Link href="/">
               <p className="ml-4 text-lg font-bold text-slate-800 dark:text-slate-200 cursor-pointer hover:text-slate-900 dark:hover:text-slate-100 transition-transform transform hover:scale-105">
-                BlockFund
+                BlockRaise
               </p>
             </Link>
           </div>

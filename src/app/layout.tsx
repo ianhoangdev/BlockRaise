@@ -3,14 +3,18 @@ import { Space_Grotesk, Inter } from 'next/font/google';
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 import NavBar from "./components/NavBar";
+import logo from "@/app/constants/logo.png";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "BlockFund",
+  title: "BlockRaise",
   description:
-    "Starter template for using thirdweb SDK with Next.js App router",
+    "Decentralized crowdfunding platform for beginners and experts",
+  icons: {
+    icon: "@/app/constants/logo.png",
+  },
 };
 
 export default function RootLayout({
