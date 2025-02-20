@@ -1,59 +1,61 @@
+# BlockRaise
 
-![tw-banner](https://github.com/thirdweb-example/next-starter/assets/57885104/20c8ce3b-4e55-4f10-ae03-2fe4743a5ee8)
+## Overview
 
-# thirdweb-next-starter
+BlockRaise is a decentralized crowdfunding platform built using Ethereum smart contracts, allowing users to contribute and raise funds in a trustless and transparent manner. The application is designed with a seamless, responsive user interface and integrated with the Ethereum blockchain for secure transactions. Hosted on AWS using Docker and EC2, BlockRaise reduces hosting costs and provides a scalable solution for future growth.
 
-Starter template to build an onchain react native app with [thirdweb](https://thirdweb.com/) and [next](https://nextjs.org/).
+## Features
 
-## Installation
+- **Smart Contract Development:** Ethereum-based Solidity smart contracts enabling secure, transparent, and trustless crowdfunding campaigns.
+- **Optimized UI & Blockchain Interactions:** Responsive frontend built with Next.js and TypeScript, integrating Ethers.js for seamless blockchain transactions.
+- **Cloud Deployment:** Deployed on AWS using Docker and EC2, reducing hosting costs by 20%.
+- **Crowdfunding Workflow:** Users can create campaigns, contribute to others' campaigns, and track progress in real-time.
 
-Install the template using [thirdweb create](https://portal.thirdweb.com/cli/create)
+## Technologies Used
+- **Solidity:** Smart contract development on the Ethereum blockchain to handle crowdfunding functionality.
+- **Next.js:** Framework for building the frontend with a fast, responsive UI.
+- **TypeScript:** Strongly typed JavaScript for better maintainability and code quality.
+- **TailwindCSS:** Utility-first CSS framework for styling and creating a visually appealing interface.
+- **Node.js:** Backend runtime for handling application logic and interactions with the blockchain.
+- **Docker:** Containerization of the app for efficient deployment and management.
+- **AWS (Amazon Web Services):** Cloud hosting and deployment on Amazon EC2 to ensure reliability and scalability.
 
-```bash
-  npx thirdweb create app --next
-```
+## Setup & Installation
 
-## Environment Variables
+**Prerequisites**
+- Node.js
+- Docker
+- AWS account (for deployment)
 
-To run this project, you will need to add the following environment variables to your .env file:
 
-`CLIENT_ID`
+**Installation**
 
-To learn how to create a client ID, refer to the [client documentation](https://portal.thirdweb.com/typescript/v5/client). 
+1. Clone the repository:
 
-## Run locally
+`git clone git@github.com:ianhoangdev/BlockRaise.git`
 
-Install dependencies
+2. Install dependencies:
 
-```bash
-yarn
-```
+`npm install`
 
-Start development server
+3. Run the project locally:
 
-```bash
-yarn dev
-```
+`npm run dev` and open the app in your browser at `http://localhost:3000`
 
-Create a production build
+4. For Docker deployment, build and run the Docker container:
 
-```bash
-yarn build
-```
+`docker build -t block-raise .
+docker run -p 3000:3000 block-raise`
 
-Preview the production build
+## Deployment on AWS
+1. Build and package the Docker image.
+2. Deploy the Docker container on AWS EC2.
 
-```bash
-yarn start
-```
+## Contributing
 
-## Resources
+Contributions are welcome! Feel free to fork the repository and submit pull requests.
 
-- [Documentation](https://portal.thirdweb.com/typescript/v5)
-- [Templates](https://thirdweb.com/templates)
-- [YouTube](https://www.youtube.com/c/thirdweb)
-- [Blog](https://blog.thirdweb.com)
+## License
 
-## Need help?
+This project is licensed under the MIT License.
 
-For help or feedback, please [visit our support site](https://thirdweb.com/support)
