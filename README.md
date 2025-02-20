@@ -4,7 +4,8 @@
 
 BlockRaise is a decentralized crowdfunding platform built using Ethereum smart contracts, allowing users to contribute and raise funds in a trustless and transparent manner. The application is designed with a seamless, responsive user interface and integrated with the Ethereum blockchain for secure transactions. Hosted on AWS using Docker and EC2, BlockRaise reduces hosting costs and provides a scalable solution for future growth.
 
-Access the app [here](https://blockraise.netlify.app/)
+Access the app <a href="https://blockraise.netlify.app/" target="_blank"> here</a>
+
 
 ## Features
 
